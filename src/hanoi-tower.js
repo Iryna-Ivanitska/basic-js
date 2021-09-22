@@ -16,18 +16,7 @@ import { NotImplementedError } from '../extensions/index.js';
  */
 export default function calculateHanoi( disksNumber, turnsSpeed ) {
   //  throw new NotImplementedError('Not implemented');
-  let turnsCount = 0;
-  function solveHanoi(n,src,des,via)
-  {
-    if(n>=1)  
-    {
-      solveHanoi(n-1,src,via,des);
-      turnsCount++;
-      solveHanoi(n-1,src,des,via);
-    }
-   return;
-  }
-  solveHanoi(disksNumber,"A","B","C");
+    const turnsCount = Math.pow(2, disksNumber) - 1;
 
   return {
     turns: turnsCount, 
